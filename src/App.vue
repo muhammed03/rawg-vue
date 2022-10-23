@@ -1,30 +1,51 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div class="app">
+    <router-view />
+  </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+@font-face {
+  font-family: 'Blink-bold';
+  src: url("./assets/fonts/Roboto-Black.ttf");
 }
 
-nav {
-  padding: 30px;
+@font-face {
+  font-family: 'Blink-regular';
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+* {
+  box-sizing: border-box;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+html {
+  font-family: "Blink-regular", sans-serif;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  background-color: #151515;
+}
+
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+select:focus, input:focus{
+  outline: none;
+}
+
+.display-none{
+  display: none;
 }
 </style>
