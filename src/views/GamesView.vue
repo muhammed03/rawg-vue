@@ -1,14 +1,17 @@
 <template>
-  <div class="home">
-    <Header />
-    <h1>GamesView</h1>
-  </div>
+  <Header />
+  <GamesContent />
 </template>
 
 <script>
 import Header from "@/components/Header/Header";
+import GamesContent from "@/components/GamesContent/GamesContent";
+
 export default {
   name: "GamesView",
-  components: {Header},
+  components: {
+    Header,
+    GamesContent
+  },
 };
 </script>
