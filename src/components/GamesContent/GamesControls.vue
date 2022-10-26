@@ -16,6 +16,6 @@ export default {
     StyledGamesControls,
     GamesControlSort,
     GamesControlFilter
-  }
+  },
 }
 </script>

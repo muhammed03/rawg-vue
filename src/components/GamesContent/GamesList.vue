@@ -16,10 +16,8 @@ export default {
     Card
   },
   computed: mapGetters(['getGamesList']),
-   created () {
-      this.$store.dispatch('fetchGames', {
-        page_size: 15
-      })
+  created () {
+      this.$store.dispatch('fetchGames', mapGetters(['getGamesParams']))
   },
 }
 </script>

@@ -20,6 +20,6 @@ export default {
   name: "GamesControlFilter",
   components: {
     StyledControlSelect
-  }
+  },
 }
 </script>
