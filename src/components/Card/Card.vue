@@ -1,7 +1,7 @@
 <template>
   <StyledCard>
-    <CardMedia />
-    <CardDescription />
+    <CardMedia :gameImg="gameInfo.background_image"/>
+    <CardDescription :gameInfo="gameInfo"/>
   </StyledCard>
 </template>
 
@@ -12,6 +12,7 @@ import CardDescription from "@/components/Card/CardDescription";
 
 export default {
   name: "Card",
+  props: ['gameInfo'],
   components: {
     StyledCard,
     CardMedia,

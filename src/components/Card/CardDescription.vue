@@ -1,10 +1,10 @@
 <template>
   <StyledCardDescription>
     <router-link :to="`games/${1}`">
-      <CardTitle>CS GO</CardTitle>
+      <CardTitle>{{gameInfo.name}}</CardTitle>
     </router-link>
     <CardButtonsContainer />
-    <CardAbout />
+    <CardAbout :gameInfo="gameInfo"/>
   </StyledCardDescription>
 </template>
 
@@ -15,6 +15,7 @@ import CardAbout from "@/components/Card/CardAbout";
 
 export default {
   name: "CardDescription",
+  props: ['gameInfo'],
   components: {
     CardButtonsContainer,
     StyledCardDescription,

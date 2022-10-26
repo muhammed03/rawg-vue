@@ -1,7 +1,7 @@
 <template>
   <StyledCardMedia>
     <CardMediaWrapper>
-      <CardGallery/>
+      <CardGallery :gameImg="gameImg"/>
     </CardMediaWrapper>
   </StyledCardMedia>
 </template>
@@ -12,6 +12,7 @@ import CardGallery from "@/components/Card/CardGallery";
 
 export default {
   name: "CardMedia",
+  props: ['gameImg'],
   components: {
     StyledCardMedia,
     CardMediaWrapper,

@@ -3,15 +3,15 @@
     <StyledAboutList>
       <CardAboutItem>
         <CardAboutTerm>Release date:</CardAboutTerm>
-        <CardAboutDetail>Dec 31, 2022</CardAboutDetail>
+        <CardAboutDetail>{{ releaseDate }}</CardAboutDetail>
       </CardAboutItem>
       <CardAboutItem>
         <CardAboutTerm>Genres:</CardAboutTerm>
-        <CardAboutDetail>Action, RPG</CardAboutDetail>
+        <CardAboutDetail>{{ genres }}</CardAboutDetail>
       </CardAboutItem>
       <CardAboutItem>
         <CardAboutTerm>Rating:</CardAboutTerm>
-        <CardAboutDetail>#1</CardAboutDetail>
+        <CardAboutDetail>#{{rating}}</CardAboutDetail>
       </CardAboutItem>
     </StyledAboutList>
     <ShowMoreBtn>
@@ -29,9 +29,18 @@ import {
   StyledAboutList,
   StyledCardAbout
 } from "@/components/Card/styled";
+import {convertDateString, mapGenres} from "@/helpers/utils";
 
 export default {
   name: "CardAbout",
+  props: ['gameInfo'],
+  data () {
+    return {
+      releaseDate: convertDateString(this.gameInfo.released),
+      genres: mapGenres(this.gameInfo.genres),
+      rating: this.gameInfo.rating
+    }
+  },
   components: {
     StyledCardAbout,
     StyledAboutList,
