@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import GamesView from "@/views/GamesView";
-import GameDetailView from "@/views/GameDetailView";
+import DetailView from "@/views/DetailView";
 
 const routes = [
   {
@@ -10,8 +10,8 @@ const routes = [
   },
   {
     path: "/games/:id",
-    name: "GameDetailView",
-    component: GameDetailView,
+    name: "DetailView",
+    component: DetailView,
   },
 ];
 

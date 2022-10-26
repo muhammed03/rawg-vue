@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { CardImg, StyledCardGallery } from "@/components/Card/styled";
+import {CardImg, StyledCardGallery} from "@/components/Card/styled";
 
 export default {
   name: "CardGallery",

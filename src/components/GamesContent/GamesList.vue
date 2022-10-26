@@ -1,20 +1,6 @@
 <template>
   <StyledGamesList>
     <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
   </StyledGamesList>
 </template>
 
@@ -27,6 +13,11 @@ export default {
   components: {
     StyledGamesList,
     Card
-  }
+  },
+   created () {
+      this.$store.dispatch('fetchGames', {
+        page_size: 15
+      })
+  },
 }
 </script>
