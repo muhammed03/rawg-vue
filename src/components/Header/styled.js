@@ -18,7 +18,7 @@ export const StyledHeader = styled.header`
   }
 `;
 
-export const StyledSearchBarForm = styled.div`
+export const StyledSearchBarForm = styled.form`
   width: auto;
   padding-left: 10px;
   margin: 0 0.75rem 0 1rem;

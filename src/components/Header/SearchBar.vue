@@ -1,6 +1,10 @@
 <template>
-  <StyledSearchBarForm>
-    <StyledSearchInput v-model="searchTerm" @change="changeSearchTerm" />
+  <StyledSearchBarForm @submit.prevent="submitForm">
+    <StyledSearchInput
+        v-model.lazy="searchTerm"
+        placeholder="Search something..."
+        name="searchTerm"
+    />
   </StyledSearchBarForm>
 </template>
 
@@ -21,7 +25,7 @@ export default {
     }
   },
   methods: {
-    changeSearchTerm() {
+    submitForm (){
       const prevParams = mapGetters(['getGamesParams']);
       const updatedParams = {
         prevParams,
@@ -29,7 +33,7 @@ export default {
       }
       this.$store.dispatch('mutateGamesParams', updatedParams);
       this.$store.dispatch('fetchGames', updatedParams);
-    },
+    }
   }
 }
 </script>

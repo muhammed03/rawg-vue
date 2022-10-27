@@ -18,12 +18,18 @@ const games = {
     setGamesParams(state, gamesParams) {
       state.gamesParams = gamesParams;
     },
+    setLoaderState(state, loaderState) {
+      state.loading = loaderState;
+    },
   },
   actions: {
     fetchGames({ commit }, params) {
-      getGamesList(params).then((data) => {
-        commit("setGamesList", data);
-      });
+      commit("setLoaderState", true);
+      getGamesList(params)
+        .then((data) => {
+          commit("setGamesList", data);
+        })
+        .then(() => commit("setLoaderState", false));
     },
     mutateGamesParams({ commit }, params) {
       commit("setGamesParams", params);

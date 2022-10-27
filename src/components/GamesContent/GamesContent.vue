@@ -2,7 +2,7 @@
   <GamesContentContainer>
     <GamesContentHeader />
     <GamesControls />
-    <GamesList />
+    <GamesList :games-list="getGamesList"/>
     <LoadMore />
   </GamesContentContainer>
 </template>
@@ -13,6 +13,7 @@ import GamesContentHeader from "@/components/GamesContent/GamesContentHeader";
 import GamesList from "@/components/GamesContent/GamesList";
 import GamesControls from "@/components/GamesContent/GamesControls";
 import LoadMore from "@/components/GamesContent/LoadMore";
+import {mapGetters} from "vuex";
 
 export default {
   name: "GamesContent",
@@ -21,7 +22,11 @@ export default {
     GamesContentContainer,
     GamesContentHeader,
     GamesControls,
-    LoadMore
+    LoadMore,
+  },
+  computed: mapGetters(['getGamesList']),
+  created () {
+    this.$store.dispatch('fetchGames', mapGetters(['getGamesParams']))
   }
 }
 </script>
